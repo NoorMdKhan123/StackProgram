@@ -29,6 +29,23 @@ namespace StackAssignment
 
 
         }
+        internal void Peek()
+        {
+            if (this.top == null)
+            {
+                Console.WriteLine("Stack is empty");
+            }
+            Console.WriteLine("{0} is at the top of the stack", this.top.data);
+        }
+        internal void Pop()
+        {
+            if( this.top == null)
+            {
+                Console.WriteLine("Stack is empty, deletion is not possible");
+            }
+            Console.WriteLine("Value popped is {0} : ", this.top.data);
+            this.top = this.top.next;
+        }
         internal void Display()
         {
             Node temp = this.top;
@@ -38,6 +55,13 @@ namespace StackAssignment
                 temp = temp.next;
             }
         }
-
+        internal void isEmpty()
+        {
+            while (this.top != null)
+            {
+                Peek();
+                Pop();
+            }
+        }
     }
 }
